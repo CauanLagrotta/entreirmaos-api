@@ -1,0 +1,19 @@
+generator testClient {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma-test"
+}
+
+datasource testDb {
+  provider = "postgresql"
+  url      = env("TEST_URL")
+}
+
+model TestContact {
+  id      String @id @default(cuid())
+  name    String
+  email   String
+  phone   String
+  message String
+
+  @@map("testcontact")
+}

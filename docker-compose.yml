@@ -1,0 +1,18 @@
+services:
+  database:
+    image: postgres
+    container_name: entre-irmaos-database
+    ports:
+      - 5432:5432
+
+    environment:
+      - POSTGRES_USER=entreirmaos
+      - POSTGRES_PASSWORD=entreirmaos
+      - POSTGRES_DB=entreirmaos-db
+
+    volumes:
+      - entreirmaos-db-volume:/var/lib/postgresql/data
+
+volumes:
+  entreirmaos-db-volume:
+    name: entreirmaos-db-volume
