@@ -7,10 +7,13 @@ import {
   GetSearchContactsController,
 } from "../controllers/admin/read/read.controller";
 
+import { LoginController } from "../controllers/admin/login/login.controller";
+
 export const router = Router();
 
 router.post("/api/contact", CreateContactController); // http://localhost:3000/api/contact
 
+router.post("/api/admin/contact/signin", LoginController); // http://localhost:3000/api/admin/contact/signin
 router.get("/api/admin/contact", GetContactsController); // http://localhost:3000/api/admin/contact?page=1&limit=10
 router.get("/api/admin/contact/search", GetSearchContactsController); // http://localhost:3000/api/admin/contact/search?search=TEST
 router.delete("/api/admin/contact/:id", DeleteContactController); // http://localhost:3000/api/contact/:id
