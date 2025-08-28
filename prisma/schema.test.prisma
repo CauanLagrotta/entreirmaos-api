@@ -9,11 +9,12 @@ datasource testDb {
 }
 
 model TestContact {
-    id      String @id @default(cuid())
-    name    String
-    email   String
-    phone   String
-    message String
+    id         String   @id @default(cuid())
+    name       String
+    email      String
+    phone      String
+    message    String
+    created_at DateTime @default(now())
 
     @@map("testcontact")
 }

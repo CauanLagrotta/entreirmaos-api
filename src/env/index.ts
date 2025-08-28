@@ -3,10 +3,12 @@ import { z } from "zod";
 
 const envSchema = z.object({
   DATABASE_URL: z.string(),
+  TEST_URL: z.string(),
   BREVO_SMTP: z.string(),
   BREVO_PORT: z.string(),
   BREVO_LOGIN: z.string(),
   BREVO_PASSWORD: z.string(),
+  ADMIN_PASSWORD: z.string(),
 });
 
 const _env = envSchema.safeParse(process.env);
